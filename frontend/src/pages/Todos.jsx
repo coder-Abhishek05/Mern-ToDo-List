@@ -40,7 +40,7 @@ const App = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login"; 
+    window.location.href = "/"; 
   };
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const App = () => {
       .catch((err) => {
         console.error("Fetch error:", err);
         if (err.response?.status === 401) {
-          window.location.href = "/login";
+          window.location.href = "/";
         }
       });
   }, [updateUI]);
@@ -77,7 +77,7 @@ const App = () => {
       .catch((err) => {
         console.error("Save error:", err);
         if (err.response?.status === 401) {
-          window.location.href = "/login";
+          window.location.href = "/";
         }
       });
   };
